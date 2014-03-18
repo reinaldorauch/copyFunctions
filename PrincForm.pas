@@ -15,9 +15,9 @@ type
     { Private declarations }
   public
     { Public declarations }
-    function CopyFor(str: string; offset, length: word): string;
-    function CopyWhile(str: string; offset, length: word): string;
-    function CopyRepeat(str: string; offset, length: word): string;
+    function CopyFor(str: string; offset, len: word): string;
+    function CopyWhile(str: string; offset, len: word): string;
+    function CopyRepeat(str: string; offset, len: word): string;
   end;
 
 var
@@ -88,7 +88,7 @@ begin
     repeat
       result := result + str[i];
       inc(i);
-    until (i = len) OR (i = Length(str));
+    until (i = len) OR (i = Length(str))
   else
     result := '';
 
