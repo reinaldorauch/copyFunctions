@@ -1,0 +1,9 @@
+﻿[BtnFor]
+Coordinates=0,0,48,51
+
+[BtnWhile]
+Coordinates=67,1,58,51
+
+[BtnRepeat]
+Coordinates=48,70,65,51
+
