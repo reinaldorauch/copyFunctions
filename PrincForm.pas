@@ -36,6 +36,8 @@ var
 begin
   result := '';
 
+  length := length + offset;
+
   strLen := Length(str);
 
   if(length > strLen) then
