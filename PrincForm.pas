@@ -42,7 +42,7 @@ begin
     len := strLen;
 
   if(offset < 1) then
-    offset := 1;
+    offset := 1; { Certo é usar Exception }
 
   result := '';
 
@@ -56,7 +56,7 @@ var
 begin
 
   if(offset < 1) then
-    offset := 1;
+    offset := 1; { Certo é usar Exception }
 
   result := '';
 
@@ -77,7 +77,7 @@ var
 begin
 
   if(offset < 1) then
-    offset := 1;
+    offset := 1; { Certo é usar Exception }
 
   result := '';
   i := offset;
