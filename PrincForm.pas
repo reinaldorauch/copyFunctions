@@ -1,4 +1,4 @@
-unit PrincForm;
+﻿unit PrincForm;
 
 interface
 
@@ -11,6 +11,9 @@ type
     BtnFor: TButton;
     BtnWhile: TButton;
     BtnRepeat: TButton;
+    procedure BtnForClick(Sender: TObject);
+    procedure BtnWhileClick(Sender: TObject);
+    procedure BtnRepeatClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,12 +32,27 @@ implementation
 
 { TForm1 }
 
+procedure TForm1.BtnForClick(Sender: TObject);
+begin
+  showMessage(copyFor('Lorem Ipsum Amen', 3, 4));
+end;
+
+procedure TForm1.BtnRepeatClick(Sender: TObject);
+begin
+  showMessage(copyRepeat('Lorem Ipsum Amen', 3, 4));
+end;
+
+procedure TForm1.BtnWhileClick(Sender: TObject);
+begin
+  showMessage(copyWhile('Lorem Ipsum Amen', 3, 4));
+end;
+
 function TForm1.CopyFor(str: string; offset, len: word): string;
 var
   i: Integer;
   strLen: Integer;
 begin
-  len := len + offset;
+  len := len + offset - 1;
 
   strLen := Length(str);
 
@@ -64,7 +82,7 @@ begin
 
   i := offset;
 
-  while((i <= len) OR (i <= Length(str))) do
+  while((i < len) AND (i < Length(str))) do
   begin
     result := result + str[i];
     inc(i);
