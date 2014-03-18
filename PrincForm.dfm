@@ -20,6 +20,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'CopyFor'
     TabOrder = 0
+    OnClick = BtnForClick
   end
   object BtnWhile: TButton
     Left = 128
@@ -28,6 +29,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'CopyWhile'
     TabOrder = 1
+    OnClick = BtnWhileClick
   end
   object BtnRepeat: TButton
     Left = 240
@@ -36,5 +38,6 @@ object Form1: TForm1
     Height = 25
     Caption = 'CopyRepeat'
     TabOrder = 2
+    OnClick = BtnRepeatClick
   end
 end
