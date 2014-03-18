@@ -29,31 +29,68 @@ implementation
 
 { TForm1 }
 
-function TForm1.CopyFor(str: string; offset, length: word): string;
+function TForm1.CopyFor(str: string; offset, len: word): string;
 var
   i: Integer;
   strLen: Integer;
 begin
-  result := '';
-
-  length := length + offset;
+  len := len + offset;
 
   strLen := Length(str);
 
-  if(length > strLen) then
-    length := strLen;
+  if(len > strLen) then
+    len := strLen;
 
-  for i := offset to length do
+  if(offset < 1) then
+    offset := 1;
+
+  result := '';
+
+  for i := offset to len do
     result := result + str[i];    
 end;
 
-function TForm1.CopyRepeat(str: string; offset, length: word): string;
+function TForm1.CopyWhile(str: string; offset, len: word): string;
+var
+  i: Integer;
 begin
 
+  if(offset < 1) then
+    offset := 1;
+
+  result := '';
+
+  len := len + offset;
+
+  i := offset;
+
+  while((i <= len) OR (i <= Length(str))) do
+  begin
+    result := result + str[i];
+    inc(i);
+  end;
 end;
 
-function TForm1.CopyWhile(str: string; offset, length: word): string;
+function TForm1.CopyRepeat(str: string; offset, len: word): string;
+var
+  i: Integer;
 begin
+
+  if(offset < 1) then
+    offset := 1;
+
+  result := '';
+  i := offset;
+
+  len := len + offset;
+
+  if(len > 0) then
+    repeat
+      result := result + str[i];
+      inc(i);
+    until (i = len) OR (i = Length(str));
+  else
+    result := '';
 
 end;
 
